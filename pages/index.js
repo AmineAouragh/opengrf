@@ -1,113 +1,48 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+import Image from "next/image"
+import Head from 'next/head'
+import Link from 'next/link'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { RiArticleFill } from "react-icons/ri"
+import { AiFillSound } from "react-icons/ai"
+import { TiShoppingCart } from "react-icons/ti"
+import { TfiLayoutCtaBtnLeft } from "react-icons/tfi"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              pages/index.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+        <title>Opengrf – Instantly Create Custom OG Images for Social Media</title>
+      </Head>
+      <div className="absolute w-full h-full flex flex-col justify-center items-center">
+       <div className="flex flex-col mx-auto w-1/2">
+        <h1 className="text-4xl text-center font-bold font-Poppins">Choose a OG image template category</h1>
+        <p className="text-slate-700 text-xl mt-4">Select a category that best fits your content, and start creating stunning OG images tailored for your needs.</p>
+        <div className="mt-10 w-full mx-auto grid grid-cols-3 grid-rows-2 gap-4">
+          <div tabIndex={0} id="blog-posts-categ" className="cursor-pointer p-6 flex flex-col justify-center items-center rounded-xl border border-gray-300">
+            <RiArticleFill className="text-slate-700" size={24} />
+            <h3 className="text-2xl text-slate-700 mt-4 text-center font-bold font-Poppins">Blog Posts</h3>
+            <p className="mt-4 text-center text-slate-700">Best for content creators looking to enhance blog post previews and drive traffic.</p>
+          </div>
+          <div tabIndex={0} id="landing-pages-categ" className="cursor-pointer p-6 flex flex-col justify-center items-center rounded-xl border border-gray-300">
+            <TfiLayoutCtaBtnLeft className="text-slate-700" size={24} />
+            <h3 className="text-2xl mt-4 text-slate-700 text-center font-bold font-Poppins">Landing Pages</h3>
+            <p className="mt-4 text-center text-slate-700">Best for optimizing landing pages, lead generation, and product announcements.</p>
+          </div>
+          <div tabIndex={0} id="ecom-categ" className="cursor-pointer p-6 flex flex-col justify-center items-center rounded-xl border border-gray-300">
+            <TiShoppingCart className="text-slate-700" size={24} />
+            <h3 className="text-2xl mt-4 text-slate-700 text-center font-bold font-Poppins">E-commerce</h3>
+            <p className="mt-4 text-center text-slate-700">Best for product promotions, store launches, and creating engaging product visuals.</p>
+          </div>
+          <div tabIndex={0} id="marketing-categ" className="cursor-pointer p-6 flex flex-col justify-center items-center rounded-xl border border-gray-300">
+            <AiFillSound className="text-slate-700" size={24} />
+            <h3 className="text-2xl mt-4 text-slate-700 text-center font-bold font-Poppins">Marketing & Campaigns</h3>
+            <p className="mt-4 text-center text-slate-700">Best for eye-catching marketing campaigns, ads, and conversion-focused visuals.</p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+       </div>
+      </div>
+    </>
   );
 }
