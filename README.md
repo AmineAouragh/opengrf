@@ -8,6 +8,7 @@ OpenGRF allows users to:
 
 - Create a new OG image project
 - Name the project and select a category (e.g., Blog Post, SaaS & Product Pages, E-commerce, Marketing & Campaigns)
+![](public/choose-template-category.png)
 - Choose from a set of pre-designed OG image templates
 - Select a target platform (Twitter, Facebook, LinkedIn, etc.)
 - Automatically resize the OG image based on platform requirements
