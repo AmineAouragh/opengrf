@@ -35,24 +35,24 @@ export default function Home() {
         <h1 className="text-3xl font-bold font-Poppins">Choose a OG image template category</h1>
         <p className="text-slate-700 text-xl mt-4">Select a category that best fits your content, and start creating stunning OG images tailored for your needs.</p>
         <div className="mt-6 w-full mx-auto grid grid-cols-3 grid-rows-2 gap-4">
-          <div tabIndex={0} onClick={() => handleSelection("Blog Posts")} id="blog-posts-categ" className="group hover:border-blue-600 hover:shadow-blue-600 hover:shadow-sm cursor-pointer bg-white p-4 flex flex-col justify-center items-center rounded-xl border border-gray-300">
-            <RiArticleFill className="text-slate-700 group-hover:text-blue-600" size={24} />
-            <h3 className="text-xl group-hover:text-blue-600 text-slate-700 mt-4 text-center font-bold font-Poppins">Blog Posts</h3>
+          <div tabIndex={0} onClick={() => handleSelection("Blog Posts")} id="blog-posts-categ" className={`group ${selectedCategory == "Blog Posts" ? "border-blue-600 shadow-blue-600 shadow-sm" : "border-gray-300"} cursor-pointer bg-white p-4 flex flex-col justify-center items-center rounded-xl border`}>
+            <RiArticleFill className={`${selectedCategory == "Blog Posts" ? "text-blue-600" : "text-slate-700"} group-hover:text-blue-600`} size={24} />
+            <h3 className={`text-xl ${selectedCategory == "Blog Posts" ? "text-blue-600" : "text-slate-700"} group-hover:text-blue-600 text-slate-700 mt-4 text-center font-bold font-Poppins`}>Blog Posts</h3>
             <p className="mt-4 text-center text-slate-700">Best for content creators looking to enhance blog post previews and drive traffic.</p>
           </div>
-          <div tabIndex={0} onClick={() => handleSelection("Landing Pages")} id="landing-pages-categ" className="group hover:border-teal-500 hover:shadow-teal-500 hover:shadow-sm cursor-pointer bg-white p-4 flex flex-col justify-center items-center rounded-xl border border-gray-300">
-            <TfiLayoutCtaBtnLeft className="text-slate-700 group-hover:text-teal-500" size={24} />
-            <h3 className="text-xl mt-4 text-slate-700 text-center font-bold font-Poppins group-hover:text-teal-500">Landing Pages</h3>
+          <div tabIndex={0} onClick={() => handleSelection("Landing Pages")} id="landing-pages-categ" className={`${selectedCategory == "Landing Pages" ? "border-teal-500 shadow-teal-500 shadow-sm" : "border-gray-300"} group cursor-pointer bg-white p-4 flex flex-col justify-center items-center rounded-xl border`}>
+            <TfiLayoutCtaBtnLeft className={`${selectedCategory == "Landing Pages" ? "text-teal-500" : "text-slate-700"} group-hover:text-teal-500`} size={24} />
+            <h3 className={`text-xl mt-4 ${selectedCategory == "Landing Pages" ? "text-teal-500" : "text-slate-700"} text-center font-bold font-Poppins group-hover:text-teal-500`}>Landing Pages</h3>
             <p className="mt-4 text-center text-slate-700">Best for optimizing landing pages, lead generation, and product announcements.</p>
           </div>
-          <div tabIndex={0} onClick={() => handleSelection("E-commerce")} id="ecom-categ" className="group hover:border-green-600 hover:shadow-green-600 hover:shadow-sm cursor-pointer bg-white p-4 flex flex-col justify-center items-center rounded-xl border border-gray-300">
-            <TiShoppingCart className="text-slate-700 group-hover:text-green-600" size={24} />
-            <h3 className="text-xl mt-4 text-slate-700 group-hover:text-green-600 text-center font-bold font-Poppins">E-commerce</h3>
+          <div tabIndex={0} onClick={() => handleSelection("E-commerce")} id="ecom-categ" className={`${selectedCategory == "E-commerce" ? "border-green-600 shadow-green-600 shadow-sm" : "border-gray-300"} group cursor-pointer bg-white p-4 flex flex-col justify-center items-center rounded-xl border`}>
+            <TiShoppingCart className={`${selectedCategory == "E-commerce" ? "text-green-600" : "text-slate-700"} group-hover:text-green-600`} size={24} />
+            <h3 className={`text-xl ${selectedCategory == "E-commerce" ? "text-green-600" : "text-slate-700"} mt-4 group-hover:text-green-600 text-center font-bold font-Poppins`}>E-commerce</h3>
             <p className="mt-4 text-center text-slate-700">Best for product promotions, store launches, and creating engaging product visuals.</p>
           </div>
-          <div tabIndex={0} onClick={() => handleSelection("Marketing & Campaigns")} id="marketing-categ" className="group hover:border-pink-600 hover:shadow-pink-600 hover:shadow-sm cursor-pointer bg-white p-4 flex flex-col justify-center items-center rounded-xl border border-gray-300">
-            <AiFillSound className="text-slate-700 group-hover:text-pink-600" size={24} />
-            <h3 className="text-xl mt-4 text-slate-700 group-hover:text-pink-600 text-center font-bold font-Poppins">Marketing & Campaigns</h3>
+          <div tabIndex={0} onClick={() => handleSelection("Marketing & Campaigns")} id="marketing-categ" className={`${selectedCategory == "Marketing & Campaigns" ? "border-pink-600 shadow-pink-600 shadow-sm" : "border-gray-300"} group cursor-pointer bg-white p-4 flex flex-col justify-center items-center rounded-xl border`}>
+            <AiFillSound className={`${selectedCategory == "Marketing & Campaigns" ? "text-pink-600" : "text-slate-700"} group-hover:text-pink-600`} size={24} />
+            <h3 className={`text-xl ${selectedCategory == "Marketing & Campaigns" ? "text-pink-600" : "text-slate-700"} mt-4 group-hover:text-pink-600 text-center font-bold font-Poppins`}>Marketing & Campaigns</h3>
             <p className="mt-4 text-center text-slate-700">Best for eye-catching marketing campaigns, ads, and conversion-focused visuals.</p>
           </div>
         </div>
@@ -65,13 +65,13 @@ export default function Home() {
             <TfiLayoutMediaLeft size={24} className="text-slate-700 font-bold" />
             <h4 className="text-lg ml-2 text-slate-700 font-bold font-Poppins">Opengrf</h4>
           </div>
-          <div className="px-6 pt-6 bg-white rounded-tr-xl rounded-tl-xl">
-            <h3 className="text-2xl font-Poppins font-bold mb-4">OG Image templates for {selectedCategory.toLowerCase()}</h3>
-            <div className="border-b-2 border-slate-700 w-fit font-semibold font-Poppins text-slate-700">Templates</div>
+          <div className={`${selectedCategory == "" && "bg-white"} ${selectedCategory == "Blog Posts" && "bg-blue-600"} ${selectedCategory == "Marketing & Campaigns" && "bg-pink-600"} ${selectedCategory == "E-commerce" && "bg-green-600"} ${selectedCategory == "Landing Pages" && "bg-teal-700"} px-6 pt-6 rounded-tr-xl rounded-tl-xl`}>
+            <h3 className={`${selectedCategory == "" ? "" : "text-white"} text-2xl font-Poppins font-bold mb-4`}>OG Image templates for {selectedCategory.toLowerCase()}</h3>
+            <div className={`${selectedCategory == "" ? "text-slate-700 border-slate-700" : "text-slate-100 border-white"} border-b-2 w-fit font-semibold font-Poppins`}>Templates</div>
           </div>
           <div className="bg-gray-100 grid grid-cols-3 grid-rows-2 gap-4 rounded-br-xl rounded-bl-xl p-6">
             {
-              selectedCategory == "Blog Posts" || selectedCategory == ""
+              (selectedCategory == "Blog Posts" || selectedCategory == "")
               &&
               <>
                 {/* Template 1 */}
