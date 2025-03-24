@@ -38,7 +38,7 @@ export default function OGTemplateSelectionPage(){
                 <TfiLayoutMediaLeft size={36} className="font-bold" />
                 <h3 className="text-xl ml-2 font-bold font-Poppins">Opengrf</h3>
               </div>
-              <h1 className="text-3xl text-center font-bold font-Poppins">Choose an Open Graph template</h1>
+              <h1 className="text-3xl text-center font-bold font-Poppins">Choose an Open Graph template for your {category.toLowerCase()}</h1>
                 <div className="flex flex-col w-2/3 mx-auto mt-4">
                     <div className="pt-3">
                       
@@ -52,83 +52,112 @@ export default function OGTemplateSelectionPage(){
                         &&
                         <>
                           {/* Template 1 */}
-                          <div tabIndex={0} className="p-8 bg-slate-900 shadow-md rounded-xl">
-                            <div className="flex flex-row items-center justify-between">
-                              <div className="flex flex-col items-center">
-                                <div className="bg-white rounded-md h-3 w-8 mb-4"></div>
-                                <RxAvatar className="text-white" size={38} />
-                                <div className="bg-white w-10 h-2 rounded-md mt-2"></div>
+                          <div tabIndex={0} className="hover:border-blue-600 border border-slate-300 group p-2 rounded-xl cursor-pointer flex flex-col">
+                            <div className="px-6 py-12 bg-slate-900 shadow-md rounded-xl">
+                              <div className="flex flex-row items-center justify-between">
+                                <div className="flex flex-col items-center">
+                                  <div className="bg-white rounded-md h-3 w-8 mb-4"></div>
+                                  <RxAvatar className="text-white" size={38} />
+                                  <div className="bg-white w-10 h-2 rounded-md mt-2"></div>
+                                </div>
+                                <div className="w-2/3">
+                                  <div className="h-2 w-full rounded-xl bg-white"></div>
+                                  <div className="h-2 mt-2 w-full rounded-xl bg-white"></div>
+                                  <div className="h-2 mt-2 w-1/3 rounded-xl bg-white"></div>
+                                  <div className="rounded-sm w-10 mt-4 h-4 bg-white"></div>
+                                </div>
                               </div>
-                              <div className="w-2/3">
-                                <div className="h-2 w-full rounded-xl bg-white"></div>
-                                <div className="h-2 mt-2 w-full rounded-xl bg-white"></div>
-                                <div className="h-2 mt-2 w-1/3 rounded-xl bg-white"></div>
-                                <div className="rounded-sm w-10 mt-4 h-4 bg-white"></div>
-                              </div>
+                            </div>
+                            <div className="mt-2 group-hover:text-blue-600 text-center text-slate-700 font-semibold font-Poppins">
+                                Avatar + Text
                             </div>
                           </div>
                           {/* Template 2 */}
-                          <div tabIndex={0} className="p-8 bg-blue-500 shadow-md flex flex-row items-center justify-between rounded-xl">
-                            <div className="bg-white w-1/2 mr-4 rounded-md px-5 py-10">
-                            </div>
-                            <div className="w-1/2 flex flex-col justify-center">
-                              <div className="bg-white rounded-md h-2 w-1/3"></div>
-                              <div className="h-2 mt-3 w-full rounded-xl bg-white"></div>
-                              <div className="h-2 mt-2 w-1/2 rounded-xl bg-white"></div>
-                              <div className="mt-3 h-4 w-10 bg-white rounded-sm"></div>
-                            </div>
-                          </div>
-                          {/* Template 3 */}
-                          <div tabIndex={0} className="p-8 bg-indigo-500 shadow-md flex flex-row items-center justify-between rounded-xl">
-                            <div className="w-1/2 flex flex-col justify-center">
-                              <div className="bg-white rounded-md h-2 w-1/3"></div>
-                              <div className="h-2 mt-3 w-full rounded-xl bg-white"></div>
-                              <div className="h-2 mt-2 w-1/2 rounded-xl bg-white"></div>
-                              <div className="mt-3 h-4 w-10 bg-white rounded-sm"></div>
-                            </div>
-                            <div className="w-1/2 bg-white rounded-md px-5 py-10 ml-4">
-                            </div>
-                          </div>
-                          {/* Template 4 */}
-                          <div tabIndex={0} className="p-6 bg-sky-500 shadow-md flex flex-col items-center justify-center rounded-xl">
-                            <div className="w-3/4 flex flex-col justify-center items-center">
-                              <div className="bg-white rounded-md h-2 w-1/3"></div>
-                              <div className="h-2 mt-3 w-full rounded-xl bg-white"></div>
-                              <div className="h-2 mt-2 w-2/3 rounded-xl bg-white"></div>
-                              <div className="mt-3 h-4 w-10 bg-white rounded-sm"></div>
-                            </div>
-                          </div>
-                          {/* Template 5 */}
-                          <div tabIndex={0} className="bg-red-500 border border-red-500 shadow-md flex flex-row items-center justify-between rounded-xl">
-                            <div className="py-6 px-5 w-1/2 mr-2">
-                              <div className="">
+                          <div tabIndex={0} className="hover:border-blue-600 border border-slate-300 group p-2 rounded-xl cursor-pointer flex flex-col">
+                            <div className="px-6 py-12 bg-blue-500 shadow-md flex flex-row items-center justify-between rounded-xl">
+                              <div className="bg-white w-1/2 mr-4 rounded-md px-5 py-10">
+                              </div>
+                              <div className="w-1/2 flex flex-col justify-center">
                                 <div className="bg-white rounded-md h-2 w-1/3"></div>
                                 <div className="h-2 mt-3 w-full rounded-xl bg-white"></div>
                                 <div className="h-2 mt-2 w-1/2 rounded-xl bg-white"></div>
                                 <div className="mt-3 h-4 w-10 bg-white rounded-sm"></div>
                               </div>
                             </div>
-                            <div className="w-1/2 bg-white h-full rounded-tr-xl rounded-br-xl py-5 px-4">
+                            <div className="mt-2 group-hover:text-blue-600 text-center text-slate-700 font-semibold font-Poppins">
+                                Image on the left
+                            </div>
+                          </div>
+                          {/* Template 3 */}
+                          <div className="hover:border-blue-600 group cursor-pointer border-slate-300 border p-2 rounded-xl flex flex-col" tabIndex={0}>
+                            <div className="px-6 py-12 bg-indigo-500 shadow-md flex flex-row items-center justify-between rounded-xl">
+                              <div className="w-1/2 flex flex-col justify-center">
+                                <div className="bg-white rounded-md h-2 w-1/3"></div>
+                                <div className="h-2 mt-3 w-full rounded-xl bg-white"></div>
+                                <div className="h-2 mt-2 w-1/2 rounded-xl bg-white"></div>
+                                <div className="mt-3 h-4 w-10 bg-white rounded-sm"></div>
+                              </div>
+                              <div className="w-1/2 bg-white rounded-md px-5 py-10 ml-4">
+                              </div>
+                            </div>
+                            <div className="mt-2 group-hover:text-blue-600 text-center text-slate-700 font-semibold font-Poppins">
+                                Image on the right
+                            </div>
+                          </div>
+                          {/* Template 4 */}
+                          <div tabIndex={0} className="hover:border-blue-600 group border border-slate-300 p-2 rounded-xl cursor-pointer flex flex-col">
+                            <div className="px-6 py-12 bg-sky-500 shadow-md flex flex-col items-center justify-center rounded-xl">
+                              <div className="w-3/4 flex flex-col justify-center items-center">
+                                <div className="bg-white rounded-md h-2 w-1/3"></div>
+                                <div className="h-2 mt-3 w-full rounded-xl bg-white"></div>
+                                <div className="h-2 mt-2 w-2/3 rounded-xl bg-white"></div>
+                                <div className="mt-3 h-4 w-10 bg-white rounded-sm"></div>
+                              </div>
+                            </div>
+                            <div className="mt-2 group-hover:text-blue-600 text-center text-slate-700 font-semibold font-Poppins">
+                                Minimalist (Text + CTA)
+                            </div>
+                          </div>
+                          {/* Template 5 */}
+                          <div className="group cursor-pointer border border-slate-300 hover:border-blue-600 p-2 rounded-xl flex flex-col" tabIndex={0}>
+                            <div className="bg-red-500 border border-red-500 shadow-md flex flex-row items-center justify-between rounded-xl">
+                              <div className="py-12 flex flex-col px-5 w-1/2 mr-2">
+                                  <div className="bg-white rounded-md h-2 w-1/3"></div>
+                                  <div className="h-2 mt-3 w-full rounded-xl bg-white"></div>
+                                  <div className="h-2 mt-2 w-1/2 rounded-xl bg-white"></div>
+                                  <div className="mt-3 h-4 w-10 bg-white rounded-sm"></div>
+                              </div>
+                              <div className="w-1/2 bg-white h-full rounded-tr-xl rounded-br-xl py-5 px-4">
+                              </div>
+                            </div>
+                            <div className="mt-2 group-hover:text-blue-600 text-center text-slate-700 font-semibold font-Poppins">
+                                50/50 Split (Text + Image)
                             </div>
                           </div>
                           {/* Template 6 */}
-                          <div tabIndex={0} className="bg-slate-100 border border-slate-700 shadow-md flex flex-row items-center justify-between rounded-xl">
-                            <div className="bg-slate-700 w-1/2 h-full rounded-tl-xl rounded-bl-xl py-5 px-4">
+                          <div className="group hover:border-blue-600 border border-slate-300 cursor-pointer p-2 rounded-xl flex flex-col" tabIndex={0}>
+                            <div className="bg-slate-100 border border-slate-700 shadow-md flex flex-row items-center justify-between rounded-xl">
+                              <div className="bg-slate-700 w-1/2 h-full rounded-tl-xl rounded-bl-xl py-5 px-4">
+                              </div>
+                              <div className="w-1/2 py-12 px-5">
+                                <div className="bg-slate-700 rounded-md h-2 w-1/3"></div>
+                                <div className="h-2 mt-3 w-full rounded-xl bg-slate-700"></div>
+                                <div className="h-2 mt-2 w-1/2 rounded-xl bg-slate-700"></div>
+                                <div className="mt-3 h-4 w-10 bg-slate-700 rounded-sm"></div>
+                              </div>
                             </div>
-                          <div className="w-1/2 py-6 px-5">
-                            <div className="bg-slate-700 rounded-md h-2 w-1/3"></div>
-                            <div className="h-2 mt-3 w-full rounded-xl bg-slate-700"></div>
-                            <div className="h-2 mt-2 w-1/2 rounded-xl bg-slate-700"></div>
-                            <div className="mt-3 h-4 w-10 bg-slate-700 rounded-sm"></div>
+                            <div className="mt-2 group-hover:text-blue-600 text-center text-slate-700 font-semibold font-Poppins">
+                                50/50 Split (Image + Text)
+                            </div>
                           </div>
-                         </div>
                         </>
                       }
                       {
                         category == "Landing Pages"
                         && 
                         <>
-                          <div className="p-6 bg-gray-900 shadow-md rounded-xl">
+                          {/* Template 1 */}
+                          <div tabIndex={0} className="p-6 bg-gray-900 shadow-md rounded-xl">
                             <div className="bg-white rounded-md h-1 w-6"></div>
                             <div className="mt-3 flex flex-row items-stretch justify-between">
                               <div className="w-1/2">
@@ -141,13 +170,15 @@ export default function OGTemplateSelectionPage(){
                               </div>
                             </div>
                           </div>
-                          <div className="p-6 bg-blue-800 flex flex-col justify-center items-center shadow-md rounded-xl">
+                          {/* Template 2 */}
+                          <div tabIndex={0} className="p-6 bg-blue-800 flex flex-col justify-center items-center shadow-md rounded-xl">
                             <div className="bg-white rounded-md h-4 w-2/3"></div>
                             <div className="h-1 mt-2 w-2/3 rounded-md bg-white"></div>
                             <div className="h-1 mt-1 w-1/2 mx-auto rounded-xl bg-white"></div>
                             <div className="mt-2 h-3 w-1/4 bg-white rounded-sm"></div>
                           </div>
-                          <div className="pt-4 bg-[#FFd700] flex flex-col justify-center items-center shadow-md rounded-xl">
+                          {/* Template 3 */}
+                          <div tabIndex={0} className="pt-4 bg-[#FFd700] flex flex-col justify-center items-center shadow-md rounded-xl">
                             <div className="bg-slate-900 rounded-md h-4 w-2/3"></div>
                             <div className="h-2 mt-2 w-2/3 rounded-md bg-slate-900"></div>
                             <div className="mt-2 h-4 w-1/4 bg-slate-900 rounded-sm"></div>
@@ -160,13 +191,15 @@ export default function OGTemplateSelectionPage(){
                     {
                       category == "Marketing" &&
                       <>
-                        <div className="p-6 bg-radial bg-white border border-slate-300 flex flex-col justify-center items-center shadow-md rounded-xl">
+                        {/* Template 1 */}
+                        <div tabIndex={0} className="p-6 bg-radial bg-white border border-slate-300 flex flex-col justify-center items-center shadow-md rounded-xl">
                           <div className="bg-slate-900 rounded-md h-1 w-1/3"></div>
                           <div className="h-6 mt-2 w-2/3 rounded-md bg-slate-900"></div>
                           <div className="h-1 mt-2 w-1/2 mx-auto rounded-xl bg-slate-900"></div>
                           <div className="mt-2 h-3 w-1/4 bg-slate-900 rounded-sm"></div>
                         </div>
-                        <div className="p-6 bg-green-500 shadow-md flex flex-row items-center justify-between rounded-xl">
+                        {/* Template 2 */}
+                        <div tabIndex={0} className="p-6 bg-green-500 shadow-md flex flex-row items-center justify-between rounded-xl">
                           <div className="bg-white w-1/2 mr-4 rounded-md p-5">
                           </div>
                           <div className="w-1/2">
