@@ -1,5 +1,5 @@
 # OpenGRF
-
+![](public/opengrf-brand.png)
 **OpenGRF** is a simple and fast OG (Open Graph) image generator built for developers, creators, and marketers who want to generate OG images tailored for different platforms with minimal effort.
 
 ## 🚀 What it does
