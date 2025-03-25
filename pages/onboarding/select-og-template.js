@@ -49,7 +49,7 @@ export default function OGTemplateSelectionPage(){
                     <h3 className={`text-2xl text-white font-Poppins font-bold mb-4`}>OG Image templates for {category.toLowerCase()}</h3>
                     <div className={`border-b-2 text-white w-fit font-semibold font-Poppins`}>Templates</div>
                   </div>
-                  <div className={`${category == "Blog Posts" && "border-blue-600 shadow-blue-600 shadow-xl"} ${category == "Landing Pages" && "shadow-xl shadow-teal-600 border-teal-500"} ${category == "Marketing" && "border-pink-600"} w-full rounded-br-xl border rounded-bl-xl bg-gray-100 grid grid-cols-3 gap-4 p-6`}>
+                  <div className={`${category == "Blog Posts" && "border-blue-600 shadow-blue-600 shadow-xl"} ${category == "Landing Pages" && "shadow-lg shadow-teal-600 border-teal-500"} ${category == "Marketing" && "shadow-lg shadow-pink-500 border-pink-600"} w-full rounded-br-xl border rounded-bl-xl bg-gray-100 grid grid-cols-3 gap-4 p-6`}>
                   {
                     (category == "Blog Posts")
                     &&
@@ -160,7 +160,7 @@ export default function OGTemplateSelectionPage(){
                         && 
                         <>
                           {/* Template 1 */}
-                          <div onClick={() => handleSelection("")} className="cursor-pointer flex flex-col group p-2 border border-slate-300 hover:border-teal-600 rounded-xl" tabIndex={0}>
+                          <div onClick={() => handleSelection("50/50 (Image + Text)")} className={`cursor-pointer ${selectedTemplate == "50/50 (Image + Text)" ? "border-teal-400 bg-teal-100" : "border-slate-300"} flex flex-col group p-2 border hover:border-teal-400 rounded-xl`} tabIndex={0}>
                             <div className="px-6 pt-8 pb-10 bg-gray-900 shadow-md rounded-xl">
                               <div className="bg-white rounded-md h-2 w-8"></div>
                               <div className="mt-4 flex flex-row items-center justify-between">
@@ -174,8 +174,8 @@ export default function OGTemplateSelectionPage(){
                                 </div>
                               </div>
                             </div>
-                            <div className="mt-2 group-hover:text-teal-600 text-center text-slate-700 font-semibold font-Poppins">
-                                50/50 Split (Image + Text)
+                            <div className={`mt-2 group-hover:text-teal-600 ${selectedTemplate == "50/50 (Image + Text)" ? "text-teal-800": "text-slate-700"} text-center font-semibold font-Poppins`}>
+                                50/50 (Image + Text)
                             </div>
                           </div>
                           {/* Template 2 */}
@@ -191,7 +191,7 @@ export default function OGTemplateSelectionPage(){
                             </div>
                           </div>
                           {/* Template 3 */}
-                          <div className="cursor-pointer flex flex-col group p-2 border border-slate-300 hover:border-teal-600 rounded-xl" tabIndex={0}>
+                          <div className={`cursor-pointer ${selectedTemplate == ""} flex flex-col group p-2 border border-slate-300 hover:border-teal-600 rounded-xl`} tabIndex={0}>
                             <div className="h-full bg-[#FFd700] flex flex-col justify-center items-center shadow-md rounded-xl">
                               <div className=" bg-slate-900 rounded-md h-3 w-1/5"></div>
                               <div className="h-3 mt-2 w-1/2 rounded-md bg-slate-900"></div>
@@ -210,19 +210,19 @@ export default function OGTemplateSelectionPage(){
                       category == "Marketing" &&
                       <>
                         {/* Template 1 */}
-                        <div onClick={() => handleSelection("Flash Deal")} className={`group border border-slate-300 p-2 hover:border-pink-600 rounded-xl cursor-pointer flex flex-col`} tabIndex={0}>
+                        <div onClick={() => handleSelection("Flash Deal")} className={`group border ${selectedTemplate == "Flash Deal" ? "border-pink-400 bg-pink-100" : 'border-slate-300'} p-2 hover:border-pink-400 rounded-xl cursor-pointer flex flex-col`} tabIndex={0}>
                           <div className="px-6 h-full py-12 bg-radial bg-white border border-slate-300 flex flex-col justify-center items-center shadow-md rounded-xl">
                             <div className="bg-slate-900 rounded-md h-2 w-1/3"></div>
                             <div className="h-4 mt-2 w-1/2 rounded-md bg-slate-900"></div>
                             <div className="h-2 mt-2 w-1/2 mx-auto rounded-xl bg-slate-900"></div>
                             <div className="mt-3 h-4 w-1/4 bg-slate-900 rounded-sm"></div>
                           </div>
-                          <div className="mt-2 group-hover:text-pink-600 text-center text-slate-700 font-semibold font-Poppins">
+                          <div className={`mt-2 group-hover:text-pink-600 ${selectedTemplate == "Flash Deal" ? "text-pink-600" : "text-slate-700"} text-center font-semibold font-Poppins`}>
                             Flash Deal
                           </div>
                         </div>
                         {/* Template 2 */}
-                        <div onClick={() => handleSelection("Product Showcase")} tabIndex={0} className={`group border border-slate-300 p-2 hover:border-pink-600 rounded-xl cursor-pointer flex flex-col`}>
+                        <div onClick={() => handleSelection("Product Showcase")} tabIndex={0} className={`group border ${selectedTemplate == "Product Showcase" ? "border-pink-400 bg-pink-100" : 'border-slate-300'} p-2 hover:border-pink-400 rounded-xl cursor-pointer flex flex-col`}>
                           <div className="px-6 py-12 bg-green-500 shadow-md flex flex-row items-center justify-between rounded-xl">
                             <div className="bg-white w-1/2 mr-4 rounded-md px-5 py-10">
                             </div>
@@ -233,7 +233,7 @@ export default function OGTemplateSelectionPage(){
                               <div className="mt-3 h-4 w-10 bg-white rounded-sm"></div>
                             </div>
                           </div>
-                          <div className="mt-2 group-hover:text-pink-600 text-center text-slate-700 font-semibold font-Poppins">
+                          <div className={`mt-2 group-hover:text-pink-600 ${selectedTemplate == "Product Showcase" ? "text-pink-600" : "text-slate-700"} text-center font-semibold font-Poppins`}>
                             Product Showcase
                           </div>
                         </div>
