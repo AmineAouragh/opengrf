@@ -8,6 +8,9 @@ import { TfiLayoutMediaLeft } from "react-icons/tfi"
 import { RxAvatar } from "react-icons/rx"
 import { FiUpload } from "react-icons/fi"
 import { CiRedo } from "react-icons/ci"
+import { BsTwitterX } from "react-icons/bs"
+import { FaFacebook } from "react-icons/fa6"
+import { FaLinkedin } from "react-icons/fa"
 
 
 export default function OGEditingPage(){
@@ -23,6 +26,7 @@ export default function OGEditingPage(){
     const [ img, setImg ] = useState(null) 
     const [ imgUrl, setImgUrl ] = useState('')
     const [ bgColor, setBgColor ] = useState('')
+    
 
     function handleImageUpload(e){
         const image = e.target.files[0] 
@@ -102,7 +106,8 @@ export default function OGEditingPage(){
                         </div>
                       </div>
                     </form>
-                    <div className="px-2 py-16 w-2/5 bg-slate-900 shadow-md rounded-xl">
+                    <div className='flex flex-col w-2/5'>
+                    <div className="px-2 py-16 w-full bg-slate-900 shadow-md rounded-xl">
                         <div className="flex flex-row items-center justify-center">
                           <div className="flex w-1/3 flex-col items-center mr-12">
                             <div id='logo' className={`${brand.length > 0 ? "text-white" : "h-6 w-16 bg-white"} font-bold text-sm font-Poppins rounded-md mb-4`}>{brand}</div>
@@ -149,7 +154,21 @@ export default function OGEditingPage(){
                           </div>
                         </div>
                     </div>
-                
+                    <div className='mt-6 flex flex-col'>
+                      <label htmlFor='target_platform' className='font-Poppins text-xl mb-2 text-slate-800 font-bold'>Choose your target platform:</label>
+                      <div className='flex flex-row items-center'>
+                        <button type='button' className='rounded-md flex flex-row items-center px-6 py-4 bg-black mr-4'>
+                            <BsTwitterX size={24} className='text-white' />
+                        </button>
+                        <button type='button' className='rounded-md flex flex-row items-center px-6 py-4 bg-[#0077B5] mr-4'>
+                            <FaLinkedin size={24} className='text-white' />
+                        </button>
+                        <button type='button' className='rounded-md flex flex-row items-center px-6 py-4 bg-[#1877F2]'>
+                            <FaFacebook size={24} className='text-white' />
+                        </button>
+                      </div> 
+                    </div>
+                    </div>                
               </div>
               
             </div>
