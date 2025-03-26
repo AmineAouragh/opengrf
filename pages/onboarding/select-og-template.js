@@ -5,15 +5,9 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 
-import { RiArticleFill } from "react-icons/ri"
-import { AiFillSound } from "react-icons/ai"
-import { TiShoppingCart } from "react-icons/ti"
-import { TfiLayoutCtaBtnLeft } from "react-icons/tfi"
+
 import { TfiLayoutMediaLeft } from "react-icons/tfi"
 import { RxAvatar } from "react-icons/rx"
-import { CiImageOn } from "react-icons/ci"
-import { FaArrowRightLong } from "react-icons/fa6"
-import { CgWebsite } from "react-icons/cg"
 
 export default function OGTemplateSelectionPage(){
 
@@ -160,7 +154,7 @@ export default function OGTemplateSelectionPage(){
                         && 
                         <>
                           {/* Template 1 */}
-                          <div onClick={() => handleSelection("50/50 (Image + Text)")} className={`cursor-pointer ${selectedTemplate == "50/50 (Image + Text)" ? "border-teal-400 bg-teal-100" : "border-slate-300"} flex flex-col group p-2 border hover:border-teal-400 rounded-xl`} tabIndex={0}>
+                          <div onClick={() => handleSelection("50/50")} className={`cursor-pointer ${selectedTemplate == "50/50" ? "border-teal-400 bg-teal-100" : "border-slate-300"} flex flex-col group p-2 border hover:border-teal-400 rounded-xl`} tabIndex={0}>
                             <div className="px-6 pt-8 pb-10 bg-gray-900 shadow-md rounded-xl">
                               <div className="bg-white rounded-md h-2 w-8"></div>
                               <div className="mt-4 flex flex-row items-center justify-between">
@@ -174,24 +168,24 @@ export default function OGTemplateSelectionPage(){
                                 </div>
                               </div>
                             </div>
-                            <div className={`mt-2 group-hover:text-teal-600 ${selectedTemplate == "50/50 (Image + Text)" ? "text-teal-800": "text-slate-700"} text-center font-semibold font-Poppins`}>
-                                50/50 (Image + Text)
+                            <div className={`mt-2 group-hover:text-teal-600 ${selectedTemplate == "50/50" ? "text-teal-800": "text-slate-700"} text-center font-semibold font-Poppins`}>
+                                50/50
                             </div>
                           </div>
                           {/* Template 2 */}
-                          <div className="cursor-pointer flex flex-col group p-2 border border-slate-300 rounded-xl hover:border-teal-600" tabIndex={0}>
+                          <div onClick={() => handleSelection("Text Only")} className={`cursor-pointer flex flex-col group p-2 border ${selectedTemplate == "Text Only" ? "border-teal-400 bg-teal-100" : "border-slate-300"} rounded-xl hover:border-teal-400`} tabIndex={0}>
                             <div className="px-6 py-12 bg-blue-800 flex flex-col justify-center items-center shadow-md rounded-xl">
                               <div className="bg-white rounded-md h-4 w-1/4"></div>
                               <div className="h-2 mt-3 w-2/3 rounded-md bg-white"></div>
                               <div className="h-2 mt-2 w-1/2 mx-auto rounded-xl bg-white"></div>
                               <div className="mt-3 h-4 w-1/4 bg-white rounded-sm"></div>
                             </div>
-                            <div className="mt-2 group-hover:text-teal-600 text-center text-slate-700 font-semibold font-Poppins">
-                                Minimalist (Text Only)
+                            <div className={`mt-2 ${selectedTemplate == "Text Only" ? "text-teal-800" : "text-slate-700"} group-hover:text-teal-600 text-center font-semibold font-Poppins`}>
+                              Text Only
                             </div>
                           </div>
                           {/* Template 3 */}
-                          <div className={`cursor-pointer ${selectedTemplate == ""} flex flex-col group p-2 border border-slate-300 hover:border-teal-600 rounded-xl`} tabIndex={0}>
+                          <div onClick={() => handleSelection("1 Column")} className={`cursor-pointer ${selectedTemplate == "1 Column" ? "border-teal-400 bg-teal-100" : "border-slate-300"} flex flex-col group p-2 border hover:border-teal-400 rounded-xl`} tabIndex={0}>
                             <div className="h-full bg-[#FFd700] flex flex-col justify-center items-center shadow-md rounded-xl">
                               <div className=" bg-slate-900 rounded-md h-3 w-1/5"></div>
                               <div className="h-3 mt-2 w-1/2 rounded-md bg-slate-900"></div>
@@ -199,8 +193,8 @@ export default function OGTemplateSelectionPage(){
                               <div className="h-1/2 flex flex-col justify-center items-center w-2/3 bg-slate-900 rounded-md">
                               </div>
                             </div>
-                            <div className="mt-2 group-hover:text-teal-600 text-center text-slate-700 font-semibold font-Poppins">
-                                Minimalist (Image + Text)
+                            <div className={`mt-2 ${selectedTemplate == "1 Column" ? "text-teal-800" : "text-slate-700"} group-hover:text-teal-600 text-center font-semibold font-Poppins`}>
+                                1 Column
                             </div>
                           </div>
                       </>
@@ -244,6 +238,14 @@ export default function OGTemplateSelectionPage(){
               </div>
               <button 
                 type="button" 
+                onClick={
+                  () => router.push(
+                    {
+                      pathname: "/onboarding/edit-og-image",
+                      query: { category: category, template: selectedTemplate }
+                    }
+                  )
+                }
                 className={`${selected ? "": "hidden"} ${category == "Blog Posts" && "bg-blue-600 hover:bg-blue-700"} ${category == "Landing Pages" && "bg-teal-600 hover:bg-teal-700"} ${category == "Marketing" && "bg-pink-600 hover:bg-pink-700"} px-8 py-4 font-bold font-Poppins text-white flex flex-row items-center justify-center rounded-md shadow-md mt-10 w-1/2`}>
                   Next: Customize your OG image
                 </button>
