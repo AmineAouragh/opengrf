@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import html2canvas from 'html2canvas'
 
 import { TfiLayoutMediaLeft } from "react-icons/tfi"
 import { RxAvatar } from "react-icons/rx"
@@ -33,6 +34,18 @@ export default function OGEditingPage(){
         const url = URL.createObjectURL(image)
         setImgUrl(url) 
         setImg(image) 
+    }
+
+    function downloadOGImage(){
+      const ogImageDiv = document.getElementById("ogImage")
+
+      html2canvas(ogImageDiv).then((canvas) => {
+        const imageUrl = canvas.toDataURL('image/png')
+        const downloadBtn = document.getElementById("download")
+        downloadBtn.href = imageUrl 
+        downloadBtn.download = `og-${brand}-${Date().now()}.png` // specify the filename 
+        downloadBtn.click()
+      })
     }
 
     return (
@@ -107,7 +120,7 @@ export default function OGEditingPage(){
                       </div>
                     </form>
                     <div className='flex flex-col w-2/5'>
-                    <div className="px-2 py-16 w-full bg-slate-900 shadow-md rounded-xl">
+                    <div id='ogImage' className="px-2 py-16 w-full bg-slate-900 shadow-md rounded-xl">
                         <div className="flex flex-row items-center justify-center">
                           <div className="flex w-1/3 flex-col items-center mr-12">
                             <div id='logo' className={`${brand.length > 0 ? "text-white" : "h-6 w-16 bg-white"} font-bold text-sm font-Poppins rounded-md mb-4`}>{brand}</div>
@@ -147,14 +160,14 @@ export default function OGEditingPage(){
                             {
                                 ctaText.length > 0 
                                 ?
-                                  <div className={`${ctaColor.length > 0 ? `${ctaColor}` : "bg-white"} mt-4 w-fit font-Poppins font-bold rounded-md text-white px-6 py-2`}>{ctaText}</div>
+                                  <div className={`${ctaColor.length > 0 ? `${ctaColor} text-white` : "text-slate-700 bg-white"} mt-4 w-fit font-Poppins font-bold rounded-md px-6 py-2`}>{ctaText}</div>
                                 :
                                   <div className="rounded-sm w-24 mt-8 h-8 bg-white"></div>
                             }
                           </div>
                         </div>
                     </div>
-                    <div className='mt-6 flex flex-col'>
+                    <div className='mt-6 flex flex-col hidden'>
                       <label htmlFor='target_platform' className='font-Poppins text-xl mb-2 text-slate-800 font-bold'>Choose your target platform:</label>
                       <div className='flex flex-row items-center'>
                         <button type='button' className='rounded-md flex flex-row items-center px-6 py-4 bg-black mr-4'>
@@ -168,6 +181,7 @@ export default function OGEditingPage(){
                         </button>
                       </div> 
                     </div>
+                    <button type='button' className='px-8 py-3 rounded-xl bg-indigo-600 text-white font-Poppins font-bold mt-6' id='download'>Download as PNG</button>
                     </div>                
               </div>
               
